@@ -3,6 +3,7 @@
 <html class="light" lang="fr"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" type="image/jpeg" href="img/IMG-20260416-WA0013.jpg">
 <title>TontineChain - Tableau de Bord</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus_Jakarta_Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -97,7 +98,7 @@
     }
   </style>
   </head>
-<body class="bg-background text-on-background min-h-screen pb-24 textile-pattern">
+<body class="bg-background text-on-background min-h-screen pb-8 textile-pattern">
 <!-- ===== TOP NAVBAR TONTINECHAIN ===== -->
 <header id="top-navbar" class="bg-[#FDFBF7]/95 dark:bg-[#001A13]/95 backdrop-blur-xl sticky top-0 z-50 w-full border-b border-[#003527]/8 shadow-[0_2px_20px_rgba(0,53,39,0.06)]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -105,8 +106,8 @@
 
       <!-- Left: Logo + Brand -->
       <a href="dashboard.html" class="flex items-center gap-3 group flex-shrink-0">
-        <div class="w-9 h-9 rounded-xl bg-[#003527] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-          <span class="material-symbols-outlined text-[#D4AF37] text-lg" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+        <div class="w-9 h-9 rounded-xl overflow-hidden shadow-md group-hover:scale-105 transition-transform border-2 border-[#D4AF37]/40">
+          <img src="img/IMG-20260416-WA0013.jpg" alt="TontineChain Logo" class="w-full h-full object-cover">
         </div>
         <div class="flex flex-col leading-none">
           <span class="font-['Manrope'] font-black text-[#003527] dark:text-[#D4AF37] text-lg tracking-tight">TontineChain</span>
@@ -140,6 +141,10 @@
 
       <!-- Right: Actions -->
       <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Retour Accueil -->
+        <a href="index.html" title="Page d'accueil" class="w-9 h-9 rounded-xl flex items-center justify-center text-[#064E3B] dark:text-[#E8F5E9] hover:bg-[#003527]/8 transition-colors" >
+          <span class="material-symbols-outlined text-xl">home</span>
+        </a>
         <!-- Notifications -->
         <button class="relative w-9 h-9 rounded-xl flex items-center justify-center text-[#064E3B] dark:text-[#E8F5E9] hover:bg-[#003527]/8 transition-colors">
           <span class="material-symbols-outlined text-xl">notifications</span>
@@ -152,10 +157,10 @@
         <!-- Avatar/Profile -->
         <a href="profile.html" class="flex items-center gap-2 hover:opacity-85 transition-opacity">
           <div class="w-9 h-9 rounded-xl overflow-hidden border-2 border-[#D4AF37]/30 shadow-sm">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSVfN-eH9Sr-dTNEGNlEk_fIo8dFOZkkDZby6uw5fPuE71im_IGpaQzHoM9oCKILUcwULiqez2bWrsN6vhpg2If46C-6Lkt8B8Ex9o7sGxJqGiCzcWAQFhUqNGiHYqjY0KXMgt88gVy7iNTq2881OGwpc4M8fvTeRzn-dOmrHgD-qKkUKAbSlrvXOepp07alLYb1xM-4Tfida4T_0JzEXB4gyMl1QePTXz2CHZ30a7yuBsdmnUff2IM4MJlBYyqM2IUHQeg8NDzfs" alt="Profil" class="w-full h-full object-cover"/>
+            <img src="img/mensah_profile.png" alt="Profil" class="w-full h-full object-cover"/>
           </div>
           <div class="hidden sm:flex flex-col leading-none">
-            <span class="text-[11px] font-bold text-[#003527] dark:text-white">Amadou</span>
+            <span class="text-[11px] font-bold text-[#003527] dark:text-white">Mensah</span>
             <span class="text-[9px] text-[#003527]/50 font-medium">Membre Élite</span>
           </div>
         </a>
@@ -169,7 +174,7 @@
 <!-- Salutation Section -->
 <section class="mb-10">
 <p class="text-on-surface-variant font-medium text-sm tracking-wide mb-1">BIENVENUE DANS VOTRE PATRIMOINE</p>
-<h1 class="text-4xl font-extrabold text-primary leading-tight">Bonjour, Amadou !</h1>
+<h1 class="text-4xl font-extrabold text-primary leading-tight">Bonjour, Mensah !</h1>
 </section>
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
 <!-- Bento Column Left: Financial Summary & Active Circles -->
@@ -285,44 +290,4 @@
 </div>
 </div>
 </main>
-<!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-8 backdrop-blur-xl bg-[#FDFBF7]/80 dark:bg-[#001A13]/80 z-50 border-t-0 rounded-t-[24px] shadow-[0_-8px_30px_rgb(0,53,39,0.06)]">
-<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="dashboard.html" data-page="dashboard.html">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Accueil</span>
-</a>
-<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="explore.html" data-page="explore.html">
-<span class="material-symbols-outlined" data-icon="explore">explore</span>
-<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Explorer</span>
-</a>
-<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="create.html" data-page="create.html">
-<span class="material-symbols-outlined text-4xl" data-icon="add_circle">add_circle</span>
-<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Créer</span>
-</a>
-<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="contract.html" data-page="contract.html">
-<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
-<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Contrats</span>
-</a>
-<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="profile.html" data-page="profile.html">
-<span class="material-symbols-outlined" data-icon="person">person</span>
-<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Profil</span>
-</a>
-</nav>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-        const navItems = document.querySelectorAll('.nav-item');
-        navItems.forEach(item => {
-            if (item.getAttribute('data-page') === currentPath) {
-                item.classList.remove('text-[#064E3B]/40', 'dark:text-white/30');
-                item.classList.add('text-[#064E3B]', 'dark:text-[#D4AF37]', 'font-bold');
-                const icon = item.querySelector('.material-symbols-outlined');
-                if (icon) {
-                    icon.style.fontVariationSettings = "'FILL' 1";
-                }
-            }
-        });
-    });
-</script>
 </body></html>
