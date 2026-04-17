@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus_Jakarta_Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#bfc9c3",
+                    "tertiary-container": "#5a4000",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e4e2de",
+                    "tertiary-fixed": "#ffdea4",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#f0bf5d",
+                    "surface-container-highest": "#e4e2de",
+                    "on-background": "#1b1c1a",
+                    "surface-container": "#efeeea",
+                    "inverse-on-surface": "#f2f0ed",
+                    "surface-container-high": "#eae8e4",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#0b513d",
+                    "on-surface": "#1b1c1a",
+                    "surface": "#fbf9f5",
+                    "secondary-fixed-dim": "#e9c349",
+                    "primary": "#003527",
+                    "secondary": "#735c00",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#064e3b",
+                    "secondary-container": "#fed65b",
+                    "secondary-fixed": "#ffe088",
+                    "on-tertiary-fixed-variant": "#5d4200",
+                    "background": "#fbf9f5",
+                    "primary-fixed": "#b0f0d6",
+                    "surface-dim": "#dbdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#241a00",
+                    "primary-fixed-dim": "#95d3ba",
+                    "on-tertiary-fixed": "#261900",
+                    "on-tertiary-container": "#daab4b",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#404944",
+                    "on-primary-container": "#80bea6",
+                    "outline": "#707974",
+                    "surface-container-low": "#f5f3ef",
+                    "surface-tint": "#2b6954",
+                    "tertiary": "#3e2b00",
+                    "inverse-surface": "#30312e",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#95d3ba",
+                    "on-secondary-fixed-variant": "#574500",
+                    "on-secondary-container": "#745c00",
+                    "surface-bright": "#fbf9f5",
+                    "on-primary-fixed": "#002117"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "2xl": "1rem",
+                    "3xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pattern-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23003527' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-background min-h-screen">
+<!-- ===== TOP NAVBAR TONTINECHAIN ===== -->
+<header id="top-navbar" class="bg-[#FDFBF7]/95 dark:bg-[#001A13]/95 backdrop-blur-xl sticky top-0 z-50 w-full border-b border-[#003527]/8 shadow-[0_2px_20px_rgba(0,53,39,0.06)]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Left: Logo + Brand -->
+      <a href="dashboard.html" class="flex items-center gap-3 group flex-shrink-0">
+        <div class="w-9 h-9 rounded-xl bg-[#003527] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+          <span class="material-symbols-outlined text-[#D4AF37] text-lg" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+        </div>
+        <div class="flex flex-col leading-none">
+          <span class="font-['Manrope'] font-black text-[#003527] dark:text-[#D4AF37] text-lg tracking-tight">TontineChain</span>
+          <span class="text-[9px] text-[#003527]/50 font-semibold uppercase tracking-[0.15em]">Patrimoine & Confiance</span>
+        </div>
+      </a>
+
+      <!-- Center: Main Nav Links (hidden on mobile) -->
+      <nav class="hidden md:flex items-end gap-6 lg:gap-10">
+        <a href="dashboard.html" class="nav-top-item flex flex-col items-center gap-0.5 transition-all text-[#064E3B]/60 dark:text-white/50 hover:text-[#003527] dark:hover:text-[#D4AF37]" data-page="dashboard.html">
+          <span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider">Accueil</span>
+        </a>
+        <a href="explore.html" class="nav-top-item flex flex-col items-center gap-0.5 transition-all text-[#064E3B]/60 dark:text-white/50 hover:text-[#003527] dark:hover:text-[#D4AF37]" data-page="explore.html">
+          <span class="material-symbols-outlined text-xl" data-icon="explore">explore</span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider">Explorer</span>
+        </a>
+        <a href="create.html" class="nav-top-item flex flex-col items-center gap-0.5 transition-all text-[#064E3B]/60 dark:text-white/50 hover:text-[#003527] dark:hover:text-[#D4AF37]" data-page="create.html">
+          <span class="material-symbols-outlined text-xl" data-icon="add_circle">add_circle</span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider">Créer</span>
+        </a>
+        <a href="contract.html" class="nav-top-item flex flex-col items-center gap-0.5 transition-all text-[#064E3B]/60 dark:text-white/50 hover:text-[#003527] dark:hover:text-[#D4AF37]" data-page="contract.html">
+          <span class="material-symbols-outlined text-xl" data-icon="history_edu">history_edu</span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider">Contrats</span>
+        </a>
+        <a href="profile.html" class="nav-top-item flex flex-col items-center gap-0.5 transition-all text-[#003527] dark:text-[#D4AF37] font-bold after:content-[''] after:block after:h-0.5 after:bg-[#D4AF37] after:mt-1 after:rounded-full" data-page="profile.html">
+          <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;" data-icon="person">person</span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider">Profil</span>
+        </a>
+      </nav>
+
+      <!-- Right: Actions -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Notifications -->
+        <button class="relative w-9 h-9 rounded-xl flex items-center justify-center text-[#064E3B] dark:text-[#E8F5E9] hover:bg-[#003527]/8 transition-colors">
+          <span class="material-symbols-outlined text-xl">notifications</span>
+          <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-[#D4AF37] rounded-full border-2 border-[#FDFBF7]"></span>
+        </button>
+        <!-- Quick Create (mobile only) -->
+        <a href="create.html" class="md:hidden w-9 h-9 rounded-xl bg-[#003527] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+          <span class="material-symbols-outlined text-xl">add</span>
+        </a>
+        <!-- Avatar/Profile -->
+        <a href="profile.html" class="flex items-center gap-2 hover:opacity-85 transition-opacity">
+          <div class="w-9 h-9 rounded-xl overflow-hidden border-2 border-[#D4AF37]/30 shadow-sm">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSVfN-eH9Sr-dTNEGNlEk_fIo8dFOZkkDZby6uw5fPuE71im_IGpaQzHoM9oCKILUcwULiqez2bWrsN6vhpg2If46C-6Lkt8B8Ex9o7sGxJqGiCzcWAQFhUqNGiHYqjY0KXMgt88gVy7iNTq2881OGwpc4M8fvTeRzn-dOmrHgD-qKkUKAbSlrvXOepp07alLYb1xM-4Tfida4T_0JzEXB4gyMl1QePTXz2CHZ30a7yuBsdmnUff2IM4MJlBYyqM2IUHQeg8NDzfs" alt="Profil" class="w-full h-full object-cover"/>
+          </div>
+          <div class="hidden sm:flex flex-col leading-none">
+            <span class="text-[11px] font-bold text-[#003527] dark:text-white">Amadou</span>
+            <span class="text-[9px] text-[#003527]/50 font-medium">Membre Élite</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- ===================================== -->
+
+<main class="max-w-md mx-auto px-6 py-8 pb-32 pattern-overlay">
+<!-- Hero Section -->
+<div class="text-center mb-10">
+<h1 class="font-headline font-extrabold text-3xl text-primary tracking-tight mb-2">Invitez vos proches</h1>
+<p class="text-on-surface-variant font-medium">Partagez la sécurité de TontineChain.</p>
+</div>
+<!-- QR Code Centered Section -->
+<div class="relative mb-12">
+<div class="bg-surface-container-lowest rounded-3xl p-8 shadow-[0_20px_50px_rgba(0,53,39,0.08)] flex flex-col items-center">
+<div class="relative p-4 bg-white rounded-2xl border-4 border-surface-container-high">
+<!-- Representing a QR Code with a styled div since we cannot use external dynamic generators easily -->
+<div class="w-48 h-48 bg-[#003527] rounded-lg flex items-center justify-center relative overflow-hidden">
+<!-- Simulated QR Pattern -->
+<div class="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-1 p-1 opacity-20">
+<div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div>
+<div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div>
+<div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div>
+</div>
+<span class="material-symbols-outlined text-secondary-container text-6xl relative z-10" data-weight="fill">qr_code_2</span>
+</div>
+</div>
+<!-- Access Code Section -->
+<div class="mt-8 text-center">
+<span class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest block mb-2">Code d'accès</span>
+<div class="flex gap-2">
+<span class="w-10 h-14 flex items-center justify-center bg-surface-container-low rounded-xl text-2xl font-bold text-primary border border-outline-variant/20">7</span>
+<span class="w-10 h-14 flex items-center justify-center bg-surface-container-low rounded-xl text-2xl font-bold text-primary border border-outline-variant/20">2</span>
+<span class="w-10 h-14 flex items-center justify-center bg-surface-container-low rounded-xl text-2xl font-bold text-primary border border-outline-variant/20">9</span>
+<span class="w-10 h-14 flex items-center justify-center bg-surface-container-low rounded-xl text-2xl font-bold text-primary border border-outline-variant/20">4</span>
+<span class="w-10 h-14 flex items-center justify-center bg-surface-container-low rounded-xl text-2xl font-bold text-primary border border-outline-variant/20">1</span>
+<span class="w-10 h-14 flex items-center justify-center bg-surface-container-low rounded-xl text-2xl font-bold text-primary border border-outline-variant/20">0</span>
+</div>
+</div>
+</div>
+<!-- Floating Success Indicator -->
+<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-secondary-container px-6 py-2 rounded-full shadow-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-on-secondary-container text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-on-secondary-container font-bold text-xs uppercase tracking-tight">Code actif</span>
+</div>
+</div>
+<!-- Sharing Actions -->
+<div class="space-y-4">
+<!-- Unique Link -->
+<div class="bg-surface-container-low p-4 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-surface-container transition-colors border border-transparent hover:border-outline-variant/10">
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Lien de partage unique</span>
+<span class="text-primary font-semibold text-sm truncate max-w-[200px]">tontinechain.com/join/729410</span>
+</div>
+<button class="bg-primary-container p-2 rounded-xl text-on-primary-container active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-lg">content_copy</span>
+</button>
+</div>
+<!-- WhatsApp Button -->
+<button class="w-full bg-[#25D366] text-white py-5 rounded-3xl font-headline font-bold text-lg flex items-center justify-center gap-3 shadow-[0_12px_24px_rgba(37,211,102,0.2)] active:scale-[0.98] transition-all">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.305 1.652zm6.599-3.835c1.516.903 3.19 1.38 4.897 1.381 5.334 0 9.675-4.341 9.677-9.674 0-2.585-1.005-5.016-2.831-6.841-1.826-1.826-4.257-2.83-6.842-2.831-5.334 0-9.675 4.341-9.677 9.674-.001 1.83.479 3.614 1.39 5.162l-.933 3.405 3.483-.914zm10.892-7.464c-.297-.148-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.148-.199.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.672-1.62-.922-2.219-.243-.585-.489-.506-.671-.515l-.57-.011c-.198 0-.52.074-.793.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347z"></path>
+</svg>
+                Partager via WhatsApp
+            </button>
+<!-- Other Sharing Options -->
+<div class="grid grid-cols-2 gap-4">
+<button class="bg-surface-container-high py-4 rounded-3xl font-bold text-primary flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-colors active:scale-95">
+<span class="material-symbols-outlined text-lg">mail</span>
+                    Email
+                </button>
+<button class="bg-surface-container-high py-4 rounded-3xl font-bold text-primary flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-colors active:scale-95">
+<span class="material-symbols-outlined text-lg">share</span>
+                    Plus
+                </button>
+</div>
+</div>
+<!-- Incentive Card -->
+<div class="mt-12 bg-primary p-6 rounded-3xl overflow-hidden relative">
+<!-- Decorative Pattern -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container rounded-full -mr-16 -mt-16 opacity-50"></div>
+<div class="relative z-10">
+<h3 class="text-secondary-container font-headline font-bold text-xl mb-2">Offre de bienvenue</h3>
+<p class="text-on-primary-container text-sm leading-relaxed mb-4">
+                    Vos filleuls reçoivent un bonus de <span class="text-white font-bold">2 000 FCFA</span> lors de leur première cotisation réussie.
+                </p>
+<div class="flex items-center gap-2 text-on-primary font-medium text-xs opacity-80">
+<span class="material-symbols-outlined text-sm">info</span>
+                    Voir les conditions de parrainage
+                </div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-8 backdrop-blur-xl bg-[#FDFBF7]/80 dark:bg-[#001A13]/80 z-50 border-t-0 rounded-t-[24px] shadow-[0_-8px_30px_rgb(0,53,39,0.06)]">
+<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="dashboard.html" data-page="dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Accueil</span>
+</a>
+<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="explore.html" data-page="explore.html">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Explorer</span>
+</a>
+<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="create.html" data-page="create.html">
+<span class="material-symbols-outlined text-4xl" data-icon="add_circle">add_circle</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Créer</span>
+</a>
+<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="contract.html" data-page="contract.html">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Contrats</span>
+</a>
+<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="profile.html" data-page="profile.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Profil</span>
+</a>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            if (item.getAttribute('data-page') === currentPath) {
+                item.classList.remove('text-[#064E3B]/40', 'dark:text-white/30');
+                item.classList.add('text-[#064E3B]', 'dark:text-[#D4AF37]', 'font-bold');
+                const icon = item.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.style.fontVariationSettings = "'FILL' 1";
+                }
+            }
+        });
+    });
+</script>
+</body></html>

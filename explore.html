@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Découvrir des Tontines | TontineChain</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#bfc9c3",
+                        "tertiary-container": "#5a4000",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e4e2de",
+                        "tertiary-fixed": "#ffdea4",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#f0bf5d",
+                        "surface-container-highest": "#e4e2de",
+                        "on-background": "#1b1c1a",
+                        "surface-container": "#efeeea",
+                        "inverse-on-surface": "#f2f0ed",
+                        "surface-container-high": "#eae8e4",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "on-surface": "#1b1c1a",
+                        "surface": "#fbf9f5",
+                        "secondary-fixed-dim": "#e9c349",
+                        "primary": "#003527",
+                        "secondary": "#735c00",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#064e3b",
+                        "secondary-container": "#fed65b",
+                        "secondary-fixed": "#ffe088",
+                        "on-tertiary-fixed-variant": "#5d4200",
+                        "background": "#fbf9f5",
+                        "primary-fixed": "#b0f0d6",
+                        "surface-dim": "#dbdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#241a00",
+                        "primary-fixed-dim": "#95d3ba",
+                        "on-tertiary-fixed": "#261900",
+                        "on-tertiary-container": "#daab4b",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#404944",
+                        "on-primary-container": "#80bea6",
+                        "outline": "#707974",
+                        "surface-container-low": "#f5f3ef",
+                        "surface-tint": "#2b6954",
+                        "tertiary": "#3e2b00",
+                        "inverse-surface": "#30312e",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#95d3ba",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-secondary-container": "#745c00",
+                        "surface-bright": "#fbf9f5",
+                        "on-primary-fixed": "#002117"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .pattern-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 30-15 30-15-30z' fill='%23003527' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-background min-h-screen pb-32">
+<!-- ===== TOP NAVBAR TONTINECHAIN ===== -->
+<header id="top-navbar" class="bg-[#FDFBF7]/95 dark:bg-[#001A13]/95 backdrop-blur-xl sticky top-0 z-50 w-full border-b border-[#003527]/8 shadow-[0_2px_20px_rgba(0,53,39,0.06)]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Left: Logo + Brand -->
+      <a href="dashboard.html" class="flex items-center gap-3 group flex-shrink-0">
+        <div class="w-9 h-9 rounded-xl bg-[#003527] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+          <span class="material-symbols-outlined text-[#D4AF37] text-lg" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+        </div>
+        <div class="flex flex-col leading-none">
+          <span class="font-['Manrope'] font-black text-[#003527] dark:text-[#D4AF37] text-lg tracking-tight">TontineChain</span>
+          <span class="text-[9px] text-[#003527]/50 font-semibold uppercase tracking-[0.15em]">Patrimoine & Confiance</span>
+        </div>
+      </a>
+
+      <!-- Center: Main Nav Links (hidden on mobile) -->
+      <nav class="hidden md:flex items-end gap-6 lg:gap-10">
+        <a href="dashboard.html" class="nav-top-item flex flex-col items-center gap-0.5 transition-all text-[#064E3B]/60 dark:text-white/50 hover:text-[#003527] dark:hover:text-[#D4AF37]" data-page="dashboard.html">
+          <span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider">Accueil</span>
+        </a>
+        <a href="explore.html" class="nav-top-item flex flex-col items-center gap-0.5 transition-all text-[#003527] dark:text-[#D4AF37] font-bold after:content-[''] after:block after:h-0.5 after:bg-[#D4AF37] after:mt-1 after:rounded-full" data-page="explore.html">
+          <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;" data-icon="explore">explore</span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider">Explorer</span>
+        </a>
+        <a href="create.html" class="nav-top-item flex flex-col items-center gap-0.5 transition-all text-[#064E3B]/60 dark:text-white/50 hover:text-[#003527] dark:hover:text-[#D4AF37]" data-page="create.html">
+          <span class="material-symbols-outlined text-xl" data-icon="add_circle">add_circle</span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider">Créer</span>
+        </a>
+        <a href="contract.html" class="nav-top-item flex flex-col items-center gap-0.5 transition-all text-[#064E3B]/60 dark:text-white/50 hover:text-[#003527] dark:hover:text-[#D4AF37]" data-page="contract.html">
+          <span class="material-symbols-outlined text-xl" data-icon="history_edu">history_edu</span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider">Contrats</span>
+        </a>
+        <a href="profile.html" class="nav-top-item flex flex-col items-center gap-0.5 transition-all text-[#064E3B]/60 dark:text-white/50 hover:text-[#003527] dark:hover:text-[#D4AF37]" data-page="profile.html">
+          <span class="material-symbols-outlined text-xl" data-icon="person">person</span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider">Profil</span>
+        </a>
+      </nav>
+
+      <!-- Right: Actions -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Notifications -->
+        <button class="relative w-9 h-9 rounded-xl flex items-center justify-center text-[#064E3B] dark:text-[#E8F5E9] hover:bg-[#003527]/8 transition-colors">
+          <span class="material-symbols-outlined text-xl">notifications</span>
+          <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-[#D4AF37] rounded-full border-2 border-[#FDFBF7]"></span>
+        </button>
+        <!-- Quick Create (mobile only) -->
+        <a href="create.html" class="md:hidden w-9 h-9 rounded-xl bg-[#003527] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+          <span class="material-symbols-outlined text-xl">add</span>
+        </a>
+        <!-- Avatar/Profile -->
+        <a href="profile.html" class="flex items-center gap-2 hover:opacity-85 transition-opacity">
+          <div class="w-9 h-9 rounded-xl overflow-hidden border-2 border-[#D4AF37]/30 shadow-sm">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSVfN-eH9Sr-dTNEGNlEk_fIo8dFOZkkDZby6uw5fPuE71im_IGpaQzHoM9oCKILUcwULiqez2bWrsN6vhpg2If46C-6Lkt8B8Ex9o7sGxJqGiCzcWAQFhUqNGiHYqjY0KXMgt88gVy7iNTq2881OGwpc4M8fvTeRzn-dOmrHgD-qKkUKAbSlrvXOepp07alLYb1xM-4Tfida4T_0JzEXB4gyMl1QePTXz2CHZ30a7yuBsdmnUff2IM4MJlBYyqM2IUHQeg8NDzfs" alt="Profil" class="w-full h-full object-cover"/>
+          </div>
+          <div class="hidden sm:flex flex-col leading-none">
+            <span class="text-[11px] font-bold text-[#003527] dark:text-white">Amadou</span>
+            <span class="text-[9px] text-[#003527]/50 font-medium">Membre Élite</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- ===================================== -->
+
+<main class="max-w-7xl mx-auto px-6 mt-8">
+<!-- Hero Search Section -->
+<section class="mb-12 relative overflow-hidden rounded-[2rem] bg-primary p-8 md:p-12 text-on-primary shadow-2xl">
+<div class="absolute inset-0 pattern-overlay opacity-50"></div>
+<div class="relative z-10 max-w-2xl">
+<h1 class="font-headline font-extrabold text-4xl md:text-5xl mb-6 leading-tight">Patrimoine &amp; <br/><span class="text-secondary-container">Solidarité</span></h1>
+<p class="text-on-primary-container text-lg mb-8 opacity-90">Trouvez une tontine de confiance qui correspond à vos objectifs d'épargne et rejoignez une communauté engagée.</p>
+<!-- Search Bar -->
+<div class="bg-surface-container-lowest rounded-2xl p-2 flex flex-col md:flex-row gap-2 shadow-lg">
+<div class="flex-grow flex items-center px-4 py-3 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-outline mr-3" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder:text-outline" placeholder="Rechercher par nom ou ville..." type="text"/>
+</div>
+<button class="bg-primary-container text-on-primary-container font-bold px-8 py-3 rounded-xl hover:bg-primary transition-colors flex items-center justify-center gap-2">
+<span>Explorer</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Filters Strip -->
+<section class="mb-12 flex flex-wrap items-center gap-4">
+<div class="bg-surface-container-high px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="payments">payments</span>
+<span class="text-sm font-semibold">Montant</span>
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</div>
+<div class="bg-surface-container-high px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="event_repeat">event_repeat</span>
+<span class="text-sm font-semibold">Fréquence</span>
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</div>
+<div class="bg-surface-container-high px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="verified_user">verified_user</span>
+<span class="text-sm font-semibold">Score de confiance</span>
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</div>
+<div class="h-6 w-px bg-outline-variant mx-2 hidden md:block"></div>
+<button class="text-primary font-bold text-sm flex items-center gap-1">
+<span>Effacer tout</span>
+</button>
+</section>
+<!-- Section Title -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline font-bold text-2xl text-primary">Appels à tontines</h2>
+<p class="text-outline text-sm mt-1">Opportunités d'épargne collective disponibles</p>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-outline hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="format_list_bulleted">format_list_bulleted</span>
+</button>
+</div>
+</div>
+<!-- Tontine Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 (Verified High Score) -->
+<div class="bg-surface-container-lowest rounded-[2rem] overflow-hidden group hover:translate-y-[-4px] transition-all duration-300 shadow-sm hover:shadow-xl relative border-t-4 border-secondary">
+<div class="p-6">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-secondary-container/20 text-secondary-container px-3 py-1 rounded-full flex items-center gap-1.5 border border-secondary-container/30">
+<span class="material-symbols-outlined text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Vérifié</span>
+</div>
+<div class="flex items-center gap-1 text-primary font-bold text-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9</span>
+</div>
+</div>
+<h3 class="font-headline font-extrabold text-xl mb-2 text-primary">Les Bâtisseurs de Cotonou</h3>
+<p class="text-outline text-sm mb-6 line-clamp-2">Groupe d'entrepreneurs locaux dédié à l'investissement immobilier et commercial.</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-surface-container-low p-4 rounded-2xl">
+<span class="text-[10px] text-outline uppercase font-bold tracking-widest block mb-1">Cotisation</span>
+<span class="text-primary font-bold text-lg">50.000 FCFA</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-2xl">
+<span class="text-[10px] text-outline uppercase font-bold tracking-widest block mb-1">Cycle</span>
+<span class="text-primary font-bold text-lg">Mensuel</span>
+</div>
+</div>
+<div class="flex items-center justify-between mb-8">
+<div class="flex -space-x-3">
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Portrait of a young man smiling softly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA30zKqH3qVTYTJqoUN4AIO4bhyBK_MXC2a-ff3bW4oq4w0zhdlTHWRtwOKyVsbM7N8NLCuuTST1VObKHYB7nce0OV-yE6vvohY5ugK1WQA9lNg-LXkbGK0w2PenJ2ODR8AHZ-2ssdTDUE5HO4eDzK_RKqODXFj0p6Js9R_oGSmdBaSaweGPoQVKgvE2Lqz4x_rr5OiGOdZN1TJ2w_8zivfNH7xn-5QnoVyroHrGkHEkBqg4U3FJIhcVg4QsUNMZPWSKX9qKE-8vSM"/>
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Portrait of a woman with braided hair smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAULv5RLNbKgGnzsy5sC_CXnRj2-6n7O2LDY2Ba84aYhB3VA2037QeLmqjNISX3J5UmF0wsucSUGOPboIgoEoBQSQEEy9hsIpN4NnEc0w25j4XdvCuI9bUFmRHPiRomttuJ5zeYHSTmXcXaYHtyfQPdzbNGAeHDxuDB-5INDIPwVTvrb9Fy9j3LWDVYlc51c7Filv1kSoMjFixOhT7Cq5x6bWzFeum3ADw_ISrnc7ziPUTYUgA1QpKWisYBaZ0ZjqL6oOOpUIK9keU"/>
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Portrait of a distinguished older man in a suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIF-YgVXTryd50KvfehO639eSFQ9ETldaZAFAy98vZ4tKefuvoZMZlIMAOPYfiCQ0NMDNOf-2Kw0nlojA9TE44CcGFq186zt_bw72ek8VFGBsk80GLXq7KRx2wVkDRbr8EFO0z1bZjaLnkA65QLhK9Q-Czn-_ik8f_QBQoPClh8rtRqtiqT6nrUeqUiAqTCMWWATqiVm4-d2RCun4eeAtfq_LP_IIhMrvsVinSR-Y0nHOyoNThSXMSSdJ3Y8u8NWBbrxaoI_vqCsE"/>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-primary-fixed flex items-center justify-center text-[10px] font-bold text-primary">+8</div>
+</div>
+<span class="text-xs font-bold text-outline">11 / 15 membres</span>
+</div>
+<div class="flex items-center justify-between gap-4">
+<div class="text-xs">
+<span class="block text-outline">Début le</span>
+<span class="font-bold text-primary">15 Octobre</span>
+</div>
+<button onclick="window.location.href=\'details.html\'" <button class="bg-primary text-on-primary font-bold px-6 py-3 rounded-xl flex-grow hover:bg-primary-container transition-colors shadow-lg shadow-primary/10">
+                            Rejoindre
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-[2rem] overflow-hidden group hover:translate-y-[-4px] transition-all duration-300 shadow-sm hover:shadow-xl relative border-t-4 border-primary-fixed">
+<div class="p-6">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-primary-fixed/30 text-primary px-3 py-1 rounded-full flex items-center gap-1.5 border border-primary-fixed/50">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Bientôt Prêt</span>
+</div>
+<div class="flex items-center gap-1 text-primary font-bold text-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.2</span>
+</div>
+</div>
+<h3 class="font-headline font-extrabold text-xl mb-2 text-primary">Solidarité Éducation</h3>
+<p class="text-outline text-sm mb-6 line-clamp-2">Épargne mutuelle pour le financement des frais de scolarité universitaire.</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-surface-container-low p-4 rounded-2xl">
+<span class="text-[10px] text-outline uppercase font-bold tracking-widest block mb-1">Cotisation</span>
+<span class="text-primary font-bold text-lg">25.000 FCFA</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-2xl">
+<span class="text-[10px] text-outline uppercase font-bold tracking-widest block mb-1">Cycle</span>
+<span class="text-primary font-bold text-lg">Hebdo</span>
+</div>
+</div>
+<div class="flex items-center justify-between mb-8">
+<div class="flex -space-x-3">
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Natural portrait of a woman with curly hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5W5Jhu-AICgJAgakV84tLD8utXESb93w7D8E7tPhsHVf_xieyLaTm8rMzvjOJtUrjKF6VfcN2eRBzpwikNMTZ8SL3tN7lvudytVTt6CdmtGy7JQsLOyXSU1MA5GJKvIcoZs-_oXrIogUz-6Jv_blHHEyEUb2O2AnY16-yizA9M27X26DNnlqxCOesrW9h0elYJVno4nkD1PHACHNbR9v_OjxXsOqn5bq-SFJ1XRXkuPJMUrZs34muBk8vN_w7dnoIZH5MciEzRvs"/>
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Portrait of a young man against a light background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_dEPB-LJ9WNKIFH-2C49VLs6rBPM7gVbIA5HysP6xQzX7XLrS1zqF89uJ1CIUtb23fsheJN0eSYb_07PTpmRgJ4Ug3m5p3lTAs25S8FXzKebuPX7RYVPC4SgO-vSMKhbkyEV8SOqtj-inPRIEdOs4cF0cyDKO_aBy24upb_mEGBLUrT_SCyMsYsQcxZsmi2m86KnhtnuZqMDnQauBxh3phbVkqo1wPiVeE4M4eoHq8swdwxU5gAJb9tcUy1IYUylSLZDQ_Zz94_0"/>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-primary-fixed flex items-center justify-center text-[10px] font-bold text-primary">+2</div>
+</div>
+<span class="text-xs font-bold text-outline">4 / 10 membres</span>
+</div>
+<div class="flex items-center justify-between gap-4">
+<div class="text-xs">
+<span class="block text-outline">Début le</span>
+<span class="font-bold text-primary">01 Novembre</span>
+</div>
+<button onclick="window.location.href=\'details.html\'" <button class="bg-primary text-on-primary font-bold px-6 py-3 rounded-xl flex-grow hover:bg-primary-container transition-colors shadow-lg shadow-primary/10">
+                            Rejoindre
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 3 (Verified High Score) -->
+<div class="bg-surface-container-lowest rounded-[2rem] overflow-hidden group hover:translate-y-[-4px] transition-all duration-300 shadow-sm hover:shadow-xl relative border-t-4 border-secondary">
+<div class="p-6">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-secondary-container/20 text-secondary-container px-3 py-1 rounded-full flex items-center gap-1.5 border border-secondary-container/30">
+<span class="material-symbols-outlined text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Vérifié</span>
+</div>
+<div class="flex items-center gap-1 text-primary font-bold text-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.8</span>
+</div>
+</div>
+<h3 class="font-headline font-extrabold text-xl mb-2 text-primary">Horizon Épargne Or</h3>
+<p class="text-outline text-sm mb-6 line-clamp-2">Un cercle restreint pour des cotisations à haut rendement et sécurité blockchain.</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-surface-container-low p-4 rounded-2xl">
+<span class="text-[10px] text-outline uppercase font-bold tracking-widest block mb-1">Cotisation</span>
+<span class="text-primary font-bold text-lg">200.000 FCFA</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-2xl">
+<span class="text-[10px] text-outline uppercase font-bold tracking-widest block mb-1">Cycle</span>
+<span class="text-primary font-bold text-lg">Mensuel</span>
+</div>
+</div>
+<div class="flex items-center justify-between mb-8">
+<div class="flex -space-x-3">
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Portrait of a young man with a slight smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9_e7TyJ30ukKDMWQ_QSVG_XPHRvvIiwXGginzYZXtVEGDvIrohjGWBf6Ybz1cMPlnPmmN8MsCxE0UKw-tD5CiE-iIXCw7ywKRF8GsK74qswBkX-wMUxfO-tCN9YraT25oGO-WJxBpxb4-TK_uagm4m6rYiuYnzt8yTZZYNNIJua4yvpkUiuO6rCIwaElqWtHtY-hrIVdacTuJ320SJjJvIfTYtcekIjEsyjyUVxy-aAREpG9CR_a5x-ahoto6-gmYd801AxtJOuk"/>
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Portrait of a professional woman looking forward" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByFHb6Of0i7tPRiL__6rBE1UMVrlQJklRdxEwuJVnRd6-7iIQIinZrbYOlPTWux4Vfp3TAb-BRr7N6UbhkQMwurGDFYKeAz3MgxwcLwYUHdEXb8CggqJ0kOqHNZ168Ac8IOG7_R6V5g-lUM57hS27gs-veIRE4jsezO-5qGE_D30FSF7YOFojyGTdaeTJIh8sD7gAwVqslbhqAXW1k3bjkI7U5rmprl-I5xdoHGSmQ_WuAf6TW_Eh2M-kUqYlTVUL6QOVV3kk3tOI"/>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-primary-fixed flex items-center justify-center text-[10px] font-bold text-primary">+3</div>
+</div>
+<span class="text-xs font-bold text-outline">5 / 8 membres</span>
+</div>
+<div class="flex items-center justify-between gap-4">
+<div class="text-xs">
+<span class="block text-outline">Début le</span>
+<span class="font-bold text-primary">20 Octobre</span>
+</div>
+<button onclick="window.location.href=\'details.html\'" <button class="bg-primary text-on-primary font-bold px-6 py-3 rounded-xl flex-grow hover:bg-primary-container transition-colors shadow-lg shadow-primary/10">
+                            Rejoindre
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-[2rem] overflow-hidden group hover:translate-y-[-4px] transition-all duration-300 shadow-sm hover:shadow-xl relative border-t-4 border-outline-variant">
+<div class="p-6">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-surface-container-high text-outline px-3 py-1 rounded-full flex items-center gap-1.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-sm" data-icon="group">group</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Nouveau</span>
+</div>
+<div class="flex items-center gap-1 text-primary font-bold text-lg">
+<span class="material-symbols-outlined text-outline" data-icon="star">star</span>
+<span>--</span>
+</div>
+</div>
+<h3 class="font-headline font-extrabold text-xl mb-2 text-primary">Cercle de Confiance 24</h3>
+<p class="text-outline text-sm mb-6 line-clamp-2">Nouveau groupe pour des cotisations journalières entre commerçants du marché.</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-surface-container-low p-4 rounded-2xl">
+<span class="text-[10px] text-outline uppercase font-bold tracking-widest block mb-1">Cotisation</span>
+<span class="text-primary font-bold text-lg">5.000 FCFA</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-2xl">
+<span class="text-[10px] text-outline uppercase font-bold tracking-widest block mb-1">Cycle</span>
+<span class="text-primary font-bold text-lg">Journalier</span>
+</div>
+</div>
+<div class="flex items-center justify-between mb-8">
+<div class="flex -space-x-3">
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Portrait of a smiling African man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzHYLfRlzQk8rdJEzRMrkUtX8Yq2Ll6AIZ95HPhst8BQ1eSU1SkWCucrwjzvbZZsv4a430VQp5_zHuLoaLRfJ7elMHf6_IkVDknD5N4-Xh1jpJJY2p8OG7IrCo-ASGkCERhPFmF-h-63f0HLwlDY7URqebRX29DfsBjLJUoLGxWqcwi_lRUGlXeY8tTspSqy37iH7X5VLpEP0qLBY-zQ117ZX544O7lb4ejKdOPdfdrkBQz2MW0Sex_aKChg6zWIUztOJvpesA60c"/>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-primary-fixed flex items-center justify-center text-[10px] font-bold text-primary">JS</div>
+</div>
+<span class="text-xs font-bold text-outline">2 / 20 membres</span>
+</div>
+<div class="flex items-center justify-between gap-4">
+<div class="text-xs">
+<span class="block text-outline">Début le</span>
+<span class="font-bold text-primary">À définir</span>
+</div>
+<button onclick="window.location.href=\'details.html\'" <button class="bg-primary text-on-primary font-bold px-6 py-3 rounded-xl flex-grow hover:bg-primary-container transition-colors shadow-lg shadow-primary/10">
+                            Rejoindre
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-8 backdrop-blur-xl bg-[#FDFBF7]/80 dark:bg-[#001A13]/80 z-50 border-t-0 rounded-t-[24px] shadow-[0_-8px_30px_rgb(0,53,39,0.06)]">
+<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="dashboard.html" data-page="dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Accueil</span>
+</a>
+<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="explore.html" data-page="explore.html">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Explorer</span>
+</a>
+<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="create.html" data-page="create.html">
+<span class="material-symbols-outlined text-4xl" data-icon="add_circle">add_circle</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Créer</span>
+</a>
+<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="contract.html" data-page="contract.html">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Contrats</span>
+</a>
+<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="profile.html" data-page="profile.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Profil</span>
+</a>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            if (item.getAttribute('data-page') === currentPath) {
+                item.classList.remove('text-[#064E3B]/40', 'dark:text-white/30');
+                item.classList.add('text-[#064E3B]', 'dark:text-[#D4AF37]', 'font-bold');
+                const icon = item.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.style.fontVariationSettings = "'FILL' 1";
+                }
+            }
+        });
+    });
+</script>
+</body></html>

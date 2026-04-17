@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Détails de la Tontine - TontineChain</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus_Jakarta_Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#bfc9c3",
+                        "tertiary-container": "#5a4000",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e4e2de",
+                        "tertiary-fixed": "#ffdea4",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#f0bf5d",
+                        "surface-container-highest": "#e4e2de",
+                        "on-background": "#1b1c1a",
+                        "surface-container": "#efeeea",
+                        "inverse-on-surface": "#f2f0ed",
+                        "surface-container-high": "#eae8e4",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "on-surface": "#1b1c1a",
+                        "surface": "#fbf9f5",
+                        "secondary-fixed-dim": "#e9c349",
+                        "primary": "#003527",
+                        "secondary": "#735c00",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#064e3b",
+                        "secondary-container": "#fed65b",
+                        "secondary-fixed": "#ffe088",
+                        "on-tertiary-fixed-variant": "#5d4200",
+                        "background": "#fbf9f5",
+                        "primary-fixed": "#b0f0d6",
+                        "surface-dim": "#dbdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#241a00",
+                        "primary-fixed-dim": "#95d3ba",
+                        "on-tertiary-fixed": "#261900",
+                        "on-tertiary-container": "#daab4b",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#404944",
+                        "on-primary-container": "#80bea6",
+                        "outline": "#707974",
+                        "surface-container-low": "#f5f3ef",
+                        "surface-tint": "#2b6954",
+                        "tertiary": "#3e2b00",
+                        "inverse-surface": "#30312e",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#95d3ba",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-secondary-container": "#745c00",
+                        "surface-bright": "#fbf9f5",
+                        "on-primary-fixed": "#002117"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pattern-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 30H15L30 0zM0 30l15 30h-30L0 30zm60 0l15 30H45L60 30z' fill='%23003527' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- ===== TOP NAVBAR TONTINECHAIN ===== -->
+<header id="top-navbar" class="bg-[#FDFBF7]/95 dark:bg-[#001A13]/95 backdrop-blur-xl sticky top-0 z-50 w-full border-b border-[#003527]/8 shadow-[0_2px_20px_rgba(0,53,39,0.06)]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Left: Logo + Brand -->
+      <a href="dashboard.html" class="flex items-center gap-3 group flex-shrink-0">
+        <div class="w-9 h-9 rounded-xl bg-[#003527] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+          <span class="material-symbols-outlined text-[#D4AF37] text-lg" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+        </div>
+        <div class="flex flex-col leading-none">
+          <span class="font-['Manrope'] font-black text-[#003527] dark:text-[#D4AF37] text-lg tracking-tight">TontineChain</span>
+          <span class="text-[9px] text-[#003527]/50 font-semibold uppercase tracking-[0.15em]">Patrimoine & Confiance</span>
+        </div>
+      </a>
+
+      <!-- Center: Main Nav Links (hidden on mobile) -->
+      <nav class="hidden md:flex items-end gap-6 lg:gap-10">
+        <a href="dashboard.html" class="nav-top-item flex flex-col items-center gap-0.5 transition-all text-[#064E3B]/60 dark:text-white/50 hover:text-[#003527] dark:hover:text-[#D4AF37]" data-page="dashboard.html">
+          <span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider">Accueil</span>
+        </a>
+        <a href="explore.html" class="nav-top-item flex flex-col items-center gap-0.5 transition-all text-[#003527] dark:text-[#D4AF37] font-bold after:content-[''] after:block after:h-0.5 after:bg-[#D4AF37] after:mt-1 after:rounded-full" data-page="explore.html">
+          <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;" data-icon="explore">explore</span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider">Explorer</span>
+        </a>
+        <a href="create.html" class="nav-top-item flex flex-col items-center gap-0.5 transition-all text-[#064E3B]/60 dark:text-white/50 hover:text-[#003527] dark:hover:text-[#D4AF37]" data-page="create.html">
+          <span class="material-symbols-outlined text-xl" data-icon="add_circle">add_circle</span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider">Créer</span>
+        </a>
+        <a href="contract.html" class="nav-top-item flex flex-col items-center gap-0.5 transition-all text-[#064E3B]/60 dark:text-white/50 hover:text-[#003527] dark:hover:text-[#D4AF37]" data-page="contract.html">
+          <span class="material-symbols-outlined text-xl" data-icon="history_edu">history_edu</span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider">Contrats</span>
+        </a>
+        <a href="profile.html" class="nav-top-item flex flex-col items-center gap-0.5 transition-all text-[#064E3B]/60 dark:text-white/50 hover:text-[#003527] dark:hover:text-[#D4AF37]" data-page="profile.html">
+          <span class="material-symbols-outlined text-xl" data-icon="person">person</span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider">Profil</span>
+        </a>
+      </nav>
+
+      <!-- Right: Actions -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Notifications -->
+        <button class="relative w-9 h-9 rounded-xl flex items-center justify-center text-[#064E3B] dark:text-[#E8F5E9] hover:bg-[#003527]/8 transition-colors">
+          <span class="material-symbols-outlined text-xl">notifications</span>
+          <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-[#D4AF37] rounded-full border-2 border-[#FDFBF7]"></span>
+        </button>
+        <!-- Quick Create (mobile only) -->
+        <a href="create.html" class="md:hidden w-9 h-9 rounded-xl bg-[#003527] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+          <span class="material-symbols-outlined text-xl">add</span>
+        </a>
+        <!-- Avatar/Profile -->
+        <a href="profile.html" class="flex items-center gap-2 hover:opacity-85 transition-opacity">
+          <div class="w-9 h-9 rounded-xl overflow-hidden border-2 border-[#D4AF37]/30 shadow-sm">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSVfN-eH9Sr-dTNEGNlEk_fIo8dFOZkkDZby6uw5fPuE71im_IGpaQzHoM9oCKILUcwULiqez2bWrsN6vhpg2If46C-6Lkt8B8Ex9o7sGxJqGiCzcWAQFhUqNGiHYqjY0KXMgt88gVy7iNTq2881OGwpc4M8fvTeRzn-dOmrHgD-qKkUKAbSlrvXOepp07alLYb1xM-4Tfida4T_0JzEXB4gyMl1QePTXz2CHZ30a7yuBsdmnUff2IM4MJlBYyqM2IUHQeg8NDzfs" alt="Profil" class="w-full h-full object-cover"/>
+          </div>
+          <div class="hidden sm:flex flex-col leading-none">
+            <span class="text-[11px] font-bold text-[#003527] dark:text-white">Amadou</span>
+            <span class="text-[9px] text-[#003527]/50 font-medium">Membre Élite</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- ===================================== -->
+
+<main class="px-6 pt-6 max-w-5xl mx-auto space-y-8">
+<!-- Hero Header Section -->
+<section class="relative overflow-hidden bg-primary rounded-[2rem] p-8 text-on-primary shadow-xl">
+<div class="absolute inset-0 pattern-overlay opacity-20"></div>
+<div class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div>
+<span class="text-on-primary-container bg-primary-container/30 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">Patrimoine Actif</span>
+<h1 class="text-4xl font-extrabold mb-2 tracking-tight">Cercle des Entrepreneurs</h1>
+<p class="text-on-primary-container font-medium">Créé par Amadou Diop • 12 Membres</p>
+</div>
+<div class="text-right">
+<p class="text-secondary-fixed text-sm font-semibold mb-1">Montant Total de la Tontine</p>
+<div class="text-5xl font-black tracking-tighter text-secondary-container">
+                        5.000.000 <span class="text-xl font-bold uppercase">CFA</span>
+</div>
+</div>
+</div>
+</section><div class="grid grid-cols-2 gap-4 mt-6">
+<button onclick="window.location.href='chat.html'" class="flex items-center justify-center gap-2 bg-primary-container text-white py-4 rounded-xl shadow-md hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-bold font-['Manrope']">Discussion</span>
+</button>
+<button onclick="window.location.href='contract.html'" class="flex items-center justify-center gap-2 bg-secondary-container text-on-secondary-container py-4 rounded-xl shadow-md hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">description</span>
+<span class="font-bold font-['Manrope']">Voir le contrat</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Timeline Section (Visual Tour de Rôle) -->
+<div class="lg:col-span-2 space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="text-2xl font-extrabold text-primary">Calendrier des Allocations</h2>
+<span class="text-primary/60 text-sm font-semibold">Cycle de 12 mois</span>
+</div>
+<div class="bg-surface-container-lowest rounded-[2rem] p-6 space-y-8 relative overflow-hidden">
+<!-- Progress Line -->
+<div class="absolute left-[2.25rem] top-10 bottom-10 w-0.5 bg-outline-variant/30"></div>
+<!-- Timeline Item: Past -->
+<div class="relative flex items-center gap-6 opacity-60">
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-white" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1 flex items-center justify-between bg-surface-container-low p-4 rounded-xl">
+<div>
+<p class="text-xs font-bold text-primary/60 uppercase">Janvier 2024</p>
+<h3 class="font-bold text-primary">Moussa Traoré</h3>
+</div>
+<span class="text-sm font-bold text-primary">Reçu</span>
+</div>
+</div>
+<!-- Timeline Item: Active -->
+<div class="relative flex items-center gap-6">
+<div class="w-10 h-10 -ml-2 rounded-full bg-secondary-container flex items-center justify-center z-10 shadow-lg border-4 border-surface-container-lowest">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div class="flex-1 flex items-center justify-between bg-white p-5 rounded-2xl shadow-[0_10px_40px_rgba(0,53,39,0.08)] border-t-4 border-secondary-container">
+<div>
+<p class="text-xs font-bold text-secondary uppercase tracking-wider">Février 2024 (En cours)</p>
+<h3 class="font-black text-xl text-primary">Fatou Sow</h3>
+</div>
+<div class="text-right">
+<p class="text-xs text-primary/60 font-bold">Collecte : 85%</p>
+<div class="w-24 h-2 bg-surface-container-high rounded-full mt-1 overflow-hidden">
+<div class="h-full bg-secondary-container w-[85%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Timeline Item: Future (Me) -->
+<div class="relative flex items-center gap-6">
+<div class="w-6 h-6 rounded-full bg-outline-variant flex items-center justify-center z-10">
+<span class="w-2 h-2 rounded-full bg-white"></span>
+</div>
+<div class="flex-1 flex items-center justify-between bg-surface-container-lowest border-2 border-dashed border-outline-variant/30 p-4 rounded-xl">
+<div>
+<p class="text-xs font-bold text-primary/40 uppercase">Mars 2024</p>
+<h3 class="font-bold text-primary">Vous (Samba Camara)</h3>
+</div>
+<span class="text-xs font-bold text-secondary bg-secondary-container/20 px-2 py-1 rounded">Prochain Tour</span>
+</div>
+</div>
+<!-- Timeline Item: Future -->
+<div class="relative flex items-center gap-6 opacity-40">
+<div class="w-6 h-6 rounded-full bg-outline-variant flex items-center justify-center z-10">
+<span class="w-2 h-2 rounded-full bg-white"></span>
+</div>
+<div class="flex-1 flex items-center justify-between bg-surface-container-low p-4 rounded-xl">
+<div>
+<p class="text-xs font-bold text-primary/60 uppercase">Avril 2024</p>
+<h3 class="font-bold text-primary">Kadiatou Diallo</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Members List Section -->
+<div class="space-y-6">
+<h2 class="text-2xl font-extrabold text-primary">Membres Actifs</h2>
+<div class="bg-surface-container-low rounded-[2rem] p-6 space-y-4">
+<!-- Member Card -->
+<div class="flex items-center gap-4 bg-surface-container-lowest p-3 rounded-2xl shadow-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a smiling West African woman, natural lighting, park background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxmFVZmHJkGyhcrP4N7qOKQfdzhuVlGVKa1TwzugwQAr7Bom7VFklXCBc3OybDRQKAHVKhC5mfQtk0HgFjq0dICZ5qBaZx60Za9coYAKIUEoXRD7MVErQEXy74ip3R4Yoe1hdl3UjGD5m7DbsgK7cgYrYMrN4T0wwu_5KUTAyJiH4iFp4rpG6wBSBektljTtAql5f4gzsY8r8wqjaj4quWYe2-KJLLWvDOSzO02CFnNTc3JjUWdURd-R35ED15J0dC9NZKsQ4q27k"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-primary text-sm">Fatou Sow</h4>
+<span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold">Bénéficiaire</span>
+</div>
+<div class="text-right">
+<span class="text-[11px] font-bold text-green-600 flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Payé
+                            </span>
+</div>
+</div>
+<!-- Member Card -->
+<div class="flex items-center gap-4 bg-surface-container-lowest p-3 rounded-2xl shadow-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up of a West African man with glasses, looking thoughtful, architectural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjM48zH61vqKXd9jkGa7uF5DzzI6bcqH8vtYnLsySJbkKAfyySn3s5RWOx-SOpHM7ns4M9hsciPH8SFYfQO27KZLnZTee5uF2q0or-DboD_m8n5365SwUR8OPCOidJmInE9qnHB6uafNEYD-v8yDMAGoJ0UsOOfxFtt5SA33_cwB09yJiXagjN6jlNLfKnbdsSqMO0BqKn48_Qjg5akzJt_rIUEXjiTCWXKEIjVg1PqceZrNoaDKy7KYCRAfVFCNIiE1dP7n9z_nM"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-primary text-sm">Ibrahim Koné</h4>
+</div>
+<div class="text-right">
+<span class="text-[11px] font-bold text-green-600 flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Payé
+                            </span>
+</div>
+</div>
+<!-- Member Card -->
+<div class="flex items-center gap-4 bg-surface-container-lowest p-3 rounded-2xl shadow-sm ring-2 ring-secondary-container/30">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-secondary-container">
+<img class="w-full h-full object-cover" data-alt="Portrait of a professional West African man in a smart suit, warm lighting, studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFfS5TeNj2phCACfeDbr42mH7gfbMoamIo1YangV4awg152ZsTqgymJA0T1Q59ezPhqRhkYndnUlXXeTuVWfuGmZVU6abW71f_eqe5wcuYt_6BIYWraXcI5O2zSTE2RpSkJHHL6kCw4GYCzaLbXrDfJchkJl1mNtTyz6a207xbkh8ahLW9cZQPX7auwzwCeVifklxPNTG4jkDfmXMt_LSTwCpmV5piyFQFH54u0Cd2GSLGFwbd_M4SF0I3KniEe4yt65A6UcWA0ro"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-primary text-sm">Vous (Moi)</h4>
+</div>
+<div class="text-right">
+<span class="text-[11px] font-bold text-secondary flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-xs">pending</span>
+                                En attente
+                            </span>
+</div>
+</div>
+<!-- Member Card -->
+<div class="flex items-center gap-4 bg-surface-container-lowest p-3 rounded-2xl shadow-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="West African woman business leader portrait, corporate office background, soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3gB-u1Sd81CTs1cC40IDhiLUBxm6_6gHIPY_oCezIXmQAQFuJHSL_fceHT2TLjuWSzlWPeg3cQhjynLbVl0n3S5h1gZWDxBQKvtIESdoRlQ3GUaW6yWL19v3bK1l4srRx5u8i4-BDZPWeumjuA7kBWP2D5iDkyxj0G5Z31uIEU7Ez69tvWbHc3xMqgf-snAISHtywHJ5jYXj8KjxaX4_B_pUGLNZU13-ykvL-14Rv9XjUUboFbzJxP0NvMkpwUYljxdpBh8rQpFs"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-primary text-sm">Mariam Touré</h4>
+</div>
+<div class="text-right">
+<span class="text-[11px] font-bold text-secondary flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-xs">pending</span>
+                                En attente
+                            </span>
+</div>
+</div>
+<button class="w-full py-3 text-sm font-bold text-primary-container bg-primary-container/10 rounded-xl hover:bg-primary-container/20 transition-colors">
+                        Voir les 12 membres
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-32 right-6 z-50">
+<button onclick="window.location.href='payment.html'" class="bg-secondary-container text-on-secondary-container px-6 py-4 rounded-full shadow-[0_12px_40px_rgba(116,92,0,0.3)] flex items-center gap-3 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-bold font-['Manrope']">Effectuer ma cotisation</span>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-8 backdrop-blur-xl bg-[#FDFBF7]/80 dark:bg-[#001A13]/80 z-50 border-t-0 rounded-t-[24px] shadow-[0_-8px_30px_rgb(0,53,39,0.06)]">
+<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="dashboard.html" data-page="dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Accueil</span>
+</a>
+<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="explore.html" data-page="explore.html">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Explorer</span>
+</a>
+<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="create.html" data-page="create.html">
+<span class="material-symbols-outlined text-4xl" data-icon="add_circle">add_circle</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Créer</span>
+</a>
+<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="contract.html" data-page="contract.html">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Contrats</span>
+</a>
+<a class="nav-item flex flex-col items-center justify-center text-[#064E3B]/40 dark:text-white/30 hover:text-[#D4AF37] transition-colors" href="profile.html" data-page="profile.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-[10px] mt-1">Profil</span>
+</a>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            if (item.getAttribute('data-page') === currentPath) {
+                item.classList.remove('text-[#064E3B]/40', 'dark:text-white/30');
+                item.classList.add('text-[#064E3B]', 'dark:text-[#D4AF37]', 'font-bold');
+                const icon = item.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.style.fontVariationSettings = "'FILL' 1";
+                }
+            }
+        });
+    });
+</script>
+</body></html>
