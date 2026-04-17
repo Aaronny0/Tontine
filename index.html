@@ -164,6 +164,11 @@
             animation: morphShape 12s ease-in-out infinite reverse;
         }
 
+        /* Masquer les shapes sur petits écrans */
+        @media (max-width: 767px) {
+            .floating-shape { display: none; }
+        }
+
         @keyframes morphShape {
             0%   { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: rotate(0deg); }
             50%  { border-radius: 50% 50% 30% 70% / 70% 30% 70% 30%; transform: rotate(180deg); }
@@ -174,7 +179,7 @@
         .slide-inner {
             position: relative;
             z-index: 2;
-            padding: 1.5rem 1rem 2.5rem;
+            padding: 1.25rem 0.75rem 2rem;
         }
 
         .slide-content {
@@ -227,30 +232,36 @@
             }
         }
 
-        /* ===== SLIDE TYPOGRAPHIE ===== */
         .slide-number {
             display: block;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 900;
             color: #2196f3;
             line-height: 1;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.35rem;
         }
 
         .slide-text {
             font-family: 'Manrope', sans-serif;
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: #1a1a2e;
-            line-height: 1.3;
+            line-height: 1.25;
         }
 
         .slide-description {
             color: #555;
-            font-size: 0.95rem;
-            margin-top: 0.75rem;
-            line-height: 1.6;
+            font-size: 0.88rem;
+            margin-top: 0.5rem;
+            line-height: 1.5;
         }
+
+        @media (min-width: 576px) {
+            .slide-number { font-size: 2.5rem; }
+            .slide-text { font-size: 1.3rem; line-height: 1.3; }
+            .slide-description { font-size: 0.95rem; }
+        }
+
 
         @media (min-width: 992px) {
             .slide-number { font-size: 3.5rem; }
